@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>西盛堂パン店｜松本市波田の昔ながらのパン屋（デモ）</title>
+  <meta name="description" content="松本市波田にある昔ながらの町のパン屋、西盛堂パン店のデモサイトです。営業時間、住所、電話番号、パンのご紹介を掲載しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ctext y=".9em" font-size="90"%3E%F0%9F%8D%9E%3C/text%3E%3C/svg%3E'>
+  <style>
+    :root {
+      --wheat: #E8C39E;
+      --toast: #B5651D;
+      --cream: #FFF8EC;
+      --ink: #3E2A1A;
+      --azuki: #7B3B3B;
+      --sage: #526B4C;
+      --paper: #FFFDF7;
+      --line: rgba(62, 42, 26, 0.16);
+      --shadow: 0 14px 32px rgba(62, 42, 26, 0.12);
+      --max: 1080px;
+      --header-height: 76px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Zen Maru Gothic", "Noto Sans JP", sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    iframe {
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      min-height: var(--header-height);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 248, 236, 0.94);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      width: min(calc(100% - 32px), var(--max));
+      min-height: var(--header-height);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(181, 101, 29, 0.26);
+      border-radius: 8px;
+      background: #fff2d8;
+      font-size: 23px;
+      flex: 0 0 auto;
+    }
+
+    .logo-text {
+      display: grid;
+      line-height: 1.25;
+    }
+
+    .logo-text strong {
+      font-size: clamp(1.06rem, 1.6vw, 1.36rem);
+      white-space: nowrap;
+    }
+
+    .logo-text span {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--azuki);
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(12px, 2vw, 26px);
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .desktop-nav a {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .desktop-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 4px;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: var(--toast);
+      transition: transform 180ms ease;
+    }
+
+    .desktop-nav a:hover::after,
+    .desktop-nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .phone-pill,
+    .phone-large,
+    .map-button,
+    .mobile-call-bar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 8px;
+      font-weight: 900;
+      text-align: center;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .phone-pill {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 9px 16px;
+      background: var(--azuki);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(123, 59, 59, 0.22);
+    }
+
+    .phone-large {
+      width: fit-content;
+      min-height: 58px;
+      padding: 14px 24px;
+      background: var(--azuki);
+      color: #fff;
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      box-shadow: 0 12px 24px rgba(123, 59, 59, 0.24);
+    }
+
+    .phone-pill:hover,
+    .phone-large:hover,
+    .map-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(62, 42, 26, 0.18);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 40;
+      padding: 8px 12px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 6px;
+    }
+
+    .skip-link:focus {
+      top: 14px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255, 248, 236, 0.96) 0%, rgba(232, 195, 158, 0.94) 42%, rgba(181, 101, 29, 0.82) 100%),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.14) 0 8px, rgba(255, 255, 255, 0) 8px 28px);
+      border-bottom: 1px solid rgba(62, 42, 26, 0.12);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255, 248, 236, 0.42), rgba(255, 248, 236, 0)),
+        repeating-linear-gradient(110deg, rgba(62, 42, 26, 0.055) 0 2px, transparent 2px 22px);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      width: min(calc(100% - 32px), var(--max));
+      min-height: min(620px, calc(100svh - var(--header-height) - 54px));
+      margin: 0 auto;
+      padding: clamp(48px, 8vw, 88px) 0 clamp(42px, 6vw, 72px);
+      display: grid;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 740px;
+    }
+
+    .demo-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 18px;
+      padding: 5px 10px;
+      border: 1px solid rgba(62, 42, 26, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 253, 247, 0.72);
+      color: var(--azuki);
+      font-size: 0.84rem;
+      font-weight: 900;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: clamp(2.7rem, 9vw, 5.5rem);
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    .hero-copy {
+      margin-bottom: 12px;
+      font-size: clamp(1.35rem, 4vw, 2.24rem);
+      line-height: 1.35;
+      font-weight: 900;
+    }
+
+    .hero-subcopy {
+      max-width: 620px;
+      margin-bottom: 24px;
+      font-size: clamp(1.02rem, 2.1vw, 1.2rem);
+      font-weight: 700;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 18px;
+    }
+
+    .business-note {
+      margin: 0;
+      padding: 7px 11px;
+      border: 1px solid rgba(62, 42, 26, 0.14);
+      border-radius: 8px;
+      background: rgba(255, 253, 247, 0.72);
+      font-weight: 700;
+    }
+
+    .section {
+      padding: clamp(54px, 8vw, 92px) 0;
+    }
+
+    .section:nth-of-type(even) {
+      background: var(--paper);
+    }
+
+    .section-shell {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .section-kicker {
+      margin-bottom: 8px;
+      color: var(--azuki);
+      font-size: 0.88rem;
+      font-weight: 900;
+    }
+
+    .section-title {
+      margin-bottom: 22px;
+      font-size: clamp(1.72rem, 4vw, 2.55rem);
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.82fr);
+      gap: clamp(28px, 5vw, 54px);
+      align-items: center;
+    }
+
+    .lead {
+      margin-bottom: 18px;
+      font-size: clamp(1.03rem, 2vw, 1.12rem);
+      font-weight: 500;
+    }
+
+    .placeholder-line,
+    .notice {
+      border-left: 4px solid var(--azuki);
+      padding: 9px 12px;
+      background: #fff5e2;
+      border-radius: 0 8px 8px 0;
+      font-weight: 700;
+    }
+
+    .placeholder-line {
+      margin: 20px 0 0;
+    }
+
+    .photo-placeholder {
+      min-height: 310px;
+      display: grid;
+      place-items: center;
+      padding: 26px;
+      border: 2px dashed rgba(123, 59, 59, 0.35);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 248, 236, 0.95), rgba(232, 195, 158, 0.55)),
+        repeating-linear-gradient(0deg, rgba(62, 42, 26, 0.045) 0 1px, transparent 1px 22px);
+      color: var(--azuki);
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .feature-grid,
+    .bread-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+    }
+
+    .feature-card,
+    .bread-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card {
+      padding: 20px;
+    }
+
+    .feature-card .icon,
+    .bread-icon {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.72rem;
+      line-height: 1;
+    }
+
+    .feature-card h3,
+    .bread-card h3 {
+      margin-bottom: 7px;
+      font-size: 1.1rem;
+      line-height: 1.45;
+      font-weight: 900;
+    }
+
+    .feature-card p,
+    .bread-card p {
+      margin-bottom: 0;
+    }
+
+    .bread-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-top: 28px;
+    }
+
+    .bread-card {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 236px;
+    }
+
+    .bread-card p {
+      flex: 1 1 auto;
+    }
+
+    .price {
+      margin-top: 18px;
+      padding-top: 13px;
+      border-top: 1px dashed rgba(62, 42, 26, 0.22);
+      color: var(--azuki);
+      font-weight: 900;
+    }
+
+    .section-footnote {
+      margin: 22px 0 0;
+      font-weight: 700;
+    }
+
+    .map-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(260px, 0.82fr);
+      gap: clamp(24px, 4vw, 40px);
+      align-items: start;
+    }
+
+    .map-frame {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f5e4ca;
+      box-shadow: var(--shadow);
+    }
+
+    .map-frame iframe {
+      display: block;
+      width: 100%;
+      min-height: 390px;
+      border: 0;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 13px;
+      margin: 0;
+    }
+
+    .info-row {
+      display: grid;
+      gap: 4px;
+      padding-bottom: 13px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-row dt {
+      color: var(--azuki);
+      font-weight: 900;
+    }
+
+    .info-row dd {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .map-button {
+      width: fit-content;
+      min-height: 48px;
+      margin-top: 18px;
+      padding: 10px 16px;
+      border: 1px solid rgba(82, 107, 76, 0.32);
+      background: var(--sage);
+      color: #fff;
+    }
+
+    .hours-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+      gap: clamp(24px, 4vw, 44px);
+      align-items: start;
+    }
+
+    .hours-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 470px;
+      font-size: 1rem;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      background: #f7e4c8;
+      font-weight: 900;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .closed {
+      color: var(--azuki);
+      font-weight: 900;
+    }
+
+    .phone-panel {
+      padding: 24px;
+      border: 1px solid rgba(123, 59, 59, 0.22);
+      border-radius: 8px;
+      background: #fff5e2;
+    }
+
+    .phone-panel h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+
+    .contact-band {
+      display: grid;
+      gap: 18px;
+      align-items: center;
+      justify-items: start;
+      padding: clamp(24px, 5vw, 38px);
+      border: 1px solid rgba(123, 59, 59, 0.2);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, #fffdf7 0%, #fff0d5 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-band p {
+      margin-bottom: 0;
+    }
+
+    .site-footer {
+      padding: 42px 0 34px;
+      background: #3E2A1A;
+      color: #fff8ec;
+    }
+
+    .footer-inner {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: end;
+    }
+
+    .footer-title {
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+      font-weight: 900;
+    }
+
+    .footer-info {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: rgba(255, 248, 236, 0.88);
+      font-weight: 500;
+    }
+
+    .footer-info li + li {
+      margin-top: 3px;
+    }
+
+    .footer-small {
+      margin: 0;
+      text-align: right;
+      color: rgba(255, 248, 236, 0.72);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .mobile-call-bar {
+      display: none;
+    }
+
+    [data-reveal] {
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    .has-js [data-reveal] {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    .has-js [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .two-column,
+      .map-layout,
+      .hours-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid,
+      .bread-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --header-height: 66px;
+      }
+
+      body {
+        padding-bottom: 68px;
+      }
+
+      .header-inner {
+        width: min(calc(100% - 24px), var(--max));
+        gap: 12px;
+      }
+
+      .logo-mark {
+        width: 36px;
+        height: 36px;
+        font-size: 21px;
+      }
+
+      .logo-text strong {
+        font-size: 1.02rem;
+      }
+
+      .logo-text span {
+        font-size: 0.72rem;
+      }
+
+      .phone-pill {
+        min-height: 42px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .hero-inner {
+        width: min(calc(100% - 24px), var(--max));
+        min-height: auto;
+        padding: 38px 0 42px;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .phone-large {
+        width: 100%;
+        min-height: 60px;
+        padding-inline: 14px;
+      }
+
+      .business-note {
+        width: 100%;
+      }
+
+      .section-shell {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .section {
+        padding: 46px 0;
+      }
+
+      .feature-grid,
+      .bread-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-placeholder {
+        min-height: 220px;
+      }
+
+      .map-frame iframe {
+        min-height: 320px;
+      }
+
+      .footer-inner {
+        width: min(calc(100% - 24px), var(--max));
+        grid-template-columns: 1fr;
+      }
+
+      .footer-small {
+        text-align: left;
+      }
+
+      .mobile-call-bar {
+        display: flex;
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 10px;
+        z-index: 30;
+        min-height: 58px;
+        padding: 12px 16px;
+        background: var(--azuki);
+        color: #fff;
+        box-shadow: 0 16px 30px rgba(62, 42, 26, 0.28);
+        font-size: 1.06rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      body {
+        font-size: 16px;
+      }
+
+      .demo-label {
+        font-size: 0.8rem;
+      }
+
+      .phone-pill {
+        gap: 6px;
+        padding-inline: 8px;
+        font-size: 0.86rem;
+      }
+
+      h1 {
+        font-size: clamp(2.32rem, 14vw, 3.3rem);
+      }
+
+      .hero-copy {
+        font-size: 1.33rem;
+      }
+
+      table {
+        min-width: 390px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header" aria-label="サイトヘッダー">
+    <div class="header-inner">
+      <a class="logo" href="#top" aria-label="西盛堂パン店 トップへ">
+        <span class="logo-mark" aria-hidden="true">🍞</span>
+        <span class="logo-text">
+          <strong>西盛堂パン店</strong>
+          <span>松本市波田</span>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="ページ内ナビゲーション">
+        <a href="#about">お店について</a>
+        <a href="#breads">パンのご紹介</a>
+        <a href="#access">アクセス</a>
+        <a href="#hours">営業時間</a>
+      </nav>
+
+      <a class="phone-pill" href="tel:0263923134" aria-label="西盛堂パン店に電話する">
+        📞 <span>電話する</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-content" data-reveal>
+          <p class="demo-label">デモサイト・公式サイトではありません</p>
+          <h1 id="hero-title">西盛堂パン店</h1>
+          <p class="hero-copy">朝8時から、焼きたての懐かしい味。</p>
+          <p class="hero-subcopy">松本市波田で、家族で続けている小さなパン屋です。</p>
+          <div class="hero-actions">
+            <a class="phone-large" href="tel:0263923134">📞 0263-92-3134 に電話する</a>
+            <p class="business-note">営業 月〜土 8:00〜18:00／日曜定休</p>
+            <p class="business-note">Google評価 ★4.7（26件）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="section-shell">
+        <div class="two-column">
+          <div data-reveal>
+            <p class="section-kicker">お店について</p>
+            <h2 class="section-title" id="about-title">町の人がふらりと立ち寄れる、昔ながらのパン屋です。</h2>
+            <p class="lead">西盛堂パン店は、松本市波田の通り沿いにある小さなパン屋です。揚げパン、牛乳パン、あんぱん、カレーパン、食パンなど、懐かしい定番のパンが並ぶお店として親しまれています。</p>
+            <p>家族で営むあたたかい雰囲気と、気さくな接客が印象に残るという声が多くあります。朝8時から開いているので、朝の用事の前後やお昼の買い物にも立ち寄りやすいお店です。</p>
+            <p>学生時代を思い出して久しぶりに訪れる人もいる、地域に根づいたパン屋として知られています。</p>
+            <p class="placeholder-line">【要確認：創業年・店の歴史】</p>
+          </div>
+
+          <div class="photo-placeholder" data-reveal>
+            <span>【要確認：写真】</span>
+          </div>
+        </div>
+
+        <div class="feature-grid" aria-label="西盛堂パン店の特徴">
+          <article class="feature-card" data-reveal>
+            <span class="icon" aria-hidden="true">🕗</span>
+            <h3>朝8時から開店</h3>
+            <p>焼きたてに出会えることもあります。</p>
+          </article>
+          <article class="feature-card" data-reveal>
+            <span class="icon" aria-hidden="true">🍞</span>
+            <h3>昔ながらの定番パン</h3>
+            <p>懐かしいラインナップが種類豊富に並びます。</p>
+          </article>
+          <article class="feature-card" data-reveal>
+            <span class="icon" aria-hidden="true">😊</span>
+            <h3>家族経営の接客</h3>
+            <p>気軽に声をかけやすい、あたたかい雰囲気です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="breads" aria-labelledby="breads-title">
+      <div class="section-shell">
+        <p class="section-kicker">パンのご紹介</p>
+        <h2 class="section-title" id="breads-title">気取らず、毎日食べたくなるパン。</h2>
+        <div class="bread-grid">
+          <article class="bread-card" data-reveal>
+            <span class="bread-icon" aria-hidden="true">🍞</span>
+            <h3>食パン</h3>
+            <p>ふわふわでそのまま食べられる、と評判の看板商品です。</p>
+            <div class="price">【要確認：価格】</div>
+          </article>
+          <article class="bread-card" data-reveal>
+            <span class="bread-icon" aria-hidden="true">🥖</span>
+            <h3>あんぱん</h3>
+            <p>しっとりしたあんこを楽しめる、昔ながらの定番です。</p>
+            <div class="price">【要確認：価格】</div>
+          </article>
+          <article class="bread-card" data-reveal>
+            <span class="bread-icon" aria-hidden="true">🍛</span>
+            <h3>カレーパン</h3>
+            <p>カレーの味がしっかり感じられる、満足感のある一品です。</p>
+            <div class="price">【要確認：価格】</div>
+          </article>
+          <article class="bread-card" data-reveal>
+            <span class="bread-icon" aria-hidden="true">🍫</span>
+            <h3>チョコ食パン</h3>
+            <p>ほんのり甘く、おやつにも朝食にも合う食パンです。</p>
+            <div class="price">【要確認：価格】</div>
+          </article>
+          <article class="bread-card" data-reveal>
+            <span class="bread-icon" aria-hidden="true">🥛</span>
+            <h3>牛乳パン</h3>
+            <p>信州らしい懐かしさを感じるパンです。</p>
+            <div class="price">【要確認：価格】</div>
+          </article>
+          <article class="bread-card" data-reveal>
+            <span class="bread-icon" aria-hidden="true">🍩</span>
+            <h3>揚げパン</h3>
+            <p>お砂糖をまぶした、昔ながらの味です。</p>
+            <div class="price">【要確認：価格】</div>
+          </article>
+        </div>
+        <p class="section-footnote">商品は日によって変わります。売り切れの際はご容赦ください。</p>
+        <p class="placeholder-line">【要確認：人気商品・おすすめ】</p>
+      </div>
+    </section>
+
+    <section class="section" id="access" aria-labelledby="access-title">
+      <div class="section-shell">
+        <p class="section-kicker">アクセス</p>
+        <h2 class="section-title" id="access-title">松本市波田中波田の、地域に根づいたお店です。</h2>
+        <div class="map-layout">
+          <div class="map-frame" data-reveal>
+            <iframe
+              title="西盛堂パン店 周辺地図"
+              src="https://www.google.com/maps?q=長野県松本市波田中波田6416-15&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div data-reveal>
+            <dl class="info-list">
+              <div class="info-row">
+                <dt>住所</dt>
+                <dd>〒390-1401 長野県松本市波田中波田6416-15</dd>
+              </div>
+              <div class="info-row">
+                <dt>駐車場</dt>
+                <dd>【要確認：駐車場の有無・台数】</dd>
+              </div>
+              <div class="info-row">
+                <dt>最寄り</dt>
+                <dd>【要確認：最寄り駅・バス停】</dd>
+              </div>
+            </dl>
+            <a class="map-button" href="https://www.google.com/maps/place/?q=place_id:ChIJbbO4I1oRHWARjdcLFbf-mOQ" target="_blank" rel="noreferrer">Googleマップで開く</a>
+            <p class="notice">冬季は周辺道路が凍結することがあります。お気をつけてお越しください。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hours" aria-labelledby="hours-title">
+      <div class="section-shell">
+        <p class="section-kicker">営業時間・お電話</p>
+        <h2 class="section-title" id="hours-title">ご来店前のお問い合わせは、お電話でどうぞ。</h2>
+        <div class="hours-layout">
+          <div class="hours-table-wrap" data-reveal>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">曜日</th>
+                  <th scope="col">営業時間</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>月曜日</td>
+                  <td>8:00〜18:00</td>
+                </tr>
+                <tr>
+                  <td>火曜日</td>
+                  <td>8:00〜18:00</td>
+                </tr>
+                <tr>
+                  <td>水曜日</td>
+                  <td>8:00〜18:00</td>
+                </tr>
+                <tr>
+                  <td>木曜日</td>
+                  <td>8:00〜18:00</td>
+                </tr>
+                <tr>
+                  <td>金曜日</td>
+                  <td>8:00〜18:00</td>
+                </tr>
+                <tr>
+                  <td>土曜日</td>
+                  <td>8:00〜18:00</td>
+                </tr>
+                <tr>
+                  <td>日曜日</td>
+                  <td class="closed">定休日</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="phone-panel" data-reveal>
+            <h3>西盛堂パン店</h3>
+            <p>臨時休業・営業時間の変更は【要確認：告知方法】</p>
+            <a class="phone-large" href="tel:0263923134">📞 0263-92-3134 に電話する</a>
+            <p class="section-footnote">お電話は営業時間内にお願いします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="section-shell">
+        <div class="contact-band" data-reveal>
+          <div>
+            <p class="section-kicker">お問い合わせ</p>
+            <h2 class="section-title" id="contact-title">ご予約・ご質問はお電話で。</h2>
+            <p>フォームは置かず、いつものお店らしく、お電話で受け付ける形にしています。</p>
+            <p class="placeholder-line">【要確認：取り置き・予約の可否】</p>
+          </div>
+          <a class="phone-large" href="tel:0263923134">📞 0263-92-3134 に電話する</a>
+          <!-- Instagram・LINE公式などがあればここにリンク【要確認：SNSの有無】 -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">西盛堂パン店</p>
+        <ul class="footer-info">
+          <li>〒390-1401 長野県松本市波田中波田6416-15</li>
+          <li><a href="tel:0263923134">0263-92-3134</a></li>
+          <li>営業時間 月〜土 8:00〜18:00／日曜定休</li>
+        </ul>
+      </div>
+      <p class="footer-small">
+        © 2026 西盛堂パン店<br>
+        デモサイト（制作：平林哲大）
+      </p>
+    </div>
+  </footer>
+
+  <a class="mobile-call-bar" href="tel:0263923134" aria-label="西盛堂パン店に電話する">📞 電話する</a>
+
+  <script>
+    document.documentElement.classList.add("has-js");
+
+    const revealTargets = document.querySelectorAll("[data-reveal]");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealTargets.forEach((target) => observer.observe(target));
+    } else {
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
