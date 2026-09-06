@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex">
   <meta name="description" content="松本市波田にある昔ながらの町のパン屋、西盛堂パン店のデモサイトです。営業時間、住所、電話番号、パンのご紹介を掲載しています。">
   <meta name="theme-color" content="#FFF8EC">
@@ -626,7 +626,7 @@
       .mobile-call-bar {
         position: fixed;
         right: 10px;
-        bottom: 8px;
+        bottom: calc(10px + env(safe-area-inset-bottom, 0px));
         left: 10px;
         z-index: 50;
         min-height: 60px;
@@ -727,10 +727,10 @@
               <p>種類豊富なパンと気さくな接客が、口コミでも親しまれています。朝8時から開いていて、タイミングによっては焼きたてのパンに出会えることもあります。</p>
               <p>昔の同級生や先輩後輩が数十年ぶりに訪れるという声もある、地域に根づいたお店です。</p>
             </div>
-            <p class="placeholder">【要確認：創業年・店の歴史】</p>
+            <p class="placeholder">※ここに創業年・お店の歴史を入れます（お店にお伺いしてから掲載）</p>
           </div>
 
-          <div class="photo-placeholder" data-reveal><span>【要確認：写真】</span></div>
+          <div class="photo-placeholder" data-reveal><span>※ここにお店・パンの写真を入れます（撮影またはご提供いただいてから掲載）</span></div>
         </div>
 
         <div class="feature-row" aria-label="西盛堂パン店の特徴">
@@ -761,17 +761,17 @@
         </div>
 
         <div class="bread-grid">
-          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍞</span><h3>食パン</h3><p>ふわふわでそのまま食べられる、と評判の看板商品です。</p><div class="price">【要確認：価格】</div></article>
-          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🥖</span><h3>あんぱん</h3><p>しっとりしたあんこを楽しめる、昔ながらのパンです。</p><div class="price">【要確認：価格】</div></article>
-          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍛</span><h3>カレーパン</h3><p>カレーの味がしっかり感じられる一品です。</p><div class="price">【要確認：価格】</div></article>
-          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍫</span><h3>チョコ食パン</h3><p>ほんのり甘く、おやつにも合う食パンです。</p><div class="price">【要確認：価格】</div></article>
-          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🥛</span><h3>牛乳パン</h3><p>信州らしい懐かしさを感じるパンです。</p><div class="price">【要確認：価格】</div></article>
-          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍩</span><h3>揚げパン</h3><p>お砂糖をまぶした、昔ながらの味です。</p><div class="price">【要確認：価格】</div></article>
+          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍞</span><h3>食パン</h3><p>ふわふわでそのまま食べられる、と評判の看板商品です。</p><div class="price">※ここに価格を入れます（お店に確認してから掲載）</div></article>
+          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🥖</span><h3>あんぱん</h3><p>しっとりしたあんこを楽しめる、昔ながらのパンです。</p><div class="price">※ここに価格を入れます（お店に確認してから掲載）</div></article>
+          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍛</span><h3>カレーパン</h3><p>カレーの味がしっかり感じられる一品です。</p><div class="price">※ここに価格を入れます（お店に確認してから掲載）</div></article>
+          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍫</span><h3>チョコ食パン</h3><p>ほんのり甘く、おやつにも合う食パンです。</p><div class="price">※ここに価格を入れます（お店に確認してから掲載）</div></article>
+          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🥛</span><h3>牛乳パン</h3><p>信州らしい懐かしさを感じるパンです。</p><div class="price">※ここに価格を入れます（お店に確認してから掲載）</div></article>
+          <article class="bread-card" data-reveal><span class="bread-icon" aria-hidden="true">🍩</span><h3>揚げパン</h3><p>お砂糖をまぶした、昔ながらの味です。</p><div class="price">※ここに価格を入れます（お店に確認してから掲載）</div></article>
         </div>
 
         <div class="bread-notes">
           <p>商品は日によって変わります。売り切れの際はご容赦ください。</p>
-          <p class="placeholder">【要確認：人気商品・おすすめ】</p>
+          <p class="placeholder">※ここに人気商品・おすすめを入れます（お店にお伺いしてから掲載）</p>
         </div>
       </div>
     </section>
@@ -791,10 +791,10 @@
           <div class="access-info" data-reveal>
             <dl class="info-list">
               <div class="info-row"><dt>住所</dt><dd>〒390-1401 長野県松本市波田中波田6416-15</dd></div>
-              <div class="info-row"><dt>駐車場</dt><dd>【要確認：駐車場の有無・台数】</dd></div>
-              <div class="info-row"><dt>最寄り</dt><dd>【要確認：最寄り駅・バス停】</dd></div>
+              <div class="info-row"><dt>駐車場</dt><dd>※駐車場の有無・台数はお店に確認してから記載します</dd></div>
+              <div class="info-row"><dt>最寄り</dt><dd>※最寄り駅・バス停はお店に確認してから記載します</dd></div>
             </dl>
-            <a class="map-link" href="https://www.google.com/maps/place/?q=place_id:ChIJbbO4I1oRHWARjdcLFbf-mOQ" target="_blank" rel="noopener noreferrer">Googleマップで開く</a>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=%E8%A5%BF%E7%9B%9B%E5%A0%82%E3%83%91%E3%83%B3%E5%BA%97%20%E9%95%B7%E9%87%8E%E7%9C%8C%E6%9D%BE%E6%9C%AC%E5%B8%82%E6%B3%A2%E7%94%B0%E4%B8%AD%E6%B3%A2%E7%94%B06416-15&amp;query_place_id=ChIJbbO4I1oRHWARjdcLFbf-mOQ" target="_blank" rel="noopener noreferrer">Googleマップで開く</a>
             <p class="winter-note">冬季は周辺道路が凍結することがあります。お気をつけてお越しください。</p>
           </div>
         </div>
@@ -826,7 +826,7 @@
 
           <div class="phone-panel" data-reveal>
             <h3>お電話はこちら</h3>
-            <p>臨時休業・営業時間の変更は【要確認：告知方法】</p>
+            <p>※臨時休業・営業時間変更のお知らせ方法は、お店に確認してから記載します</p>
             <a class="call-button" href="tel:0263923134">📞 0263-92-3134 に電話する</a>
             <p class="phone-small">お電話は営業時間内にお願いします。</p>
           </div>
@@ -840,10 +840,10 @@
           <div>
             <p class="eyebrow">お問い合わせ</p>
             <h2 class="section-title" id="contact-title">ご予約・ご質問はお電話で。</h2>
-            <p>【要確認：取り置き・予約の可否】</p>
+            <p>※取り置き・ご予約の可否はお店に確認してから記載します</p>
           </div>
           <a class="call-button" href="tel:0263923134">📞 0263-92-3134 に電話する</a>
-          <!-- Instagram・LINE公式などがあればここにリンク【要確認：SNSの有無】 -->
+          <!-- Instagram・LINE公式などがあればここにリンク※SNSの有無はお店に確認してから記載します -->
         </div>
       </div>
     </section>
